@@ -1,0 +1,7 @@
+{
+  "name": "dps926_A3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
