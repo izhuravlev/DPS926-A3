@@ -27,9 +27,9 @@
         >3</ion-button
       ></ion-col
     >
-    <!-- Total ammount here -->
+    <!-- Total amount here -->
     <ion-col class="totalField">
-      <ion-label>{{ totalVal }}</ion-label>
+      <h3 text-wrap>{{ totalVal }}</h3>
     </ion-col>
   </ion-row>
   <!-- row 2 -->
@@ -96,11 +96,7 @@
       </ion-row>
     </ion-col>
     <ion-col size="3" class="buyCol"
-      ><ion-button
-        class="buyButton"
-        expand="block"
-        color="light"
-        (click)="buyClicked()"
+      ><ion-button class="buyButton" expand="block" (click)="buyClicked()"
         >Buy</ion-button
       ></ion-col
     >

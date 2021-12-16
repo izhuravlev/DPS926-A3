@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>History Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="back-button" defaultHref="/"
+        >Go Back</ion-back-button
+      ></ion-buttons
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scrollY="false">
+  <ion-grid style="height: 95%; justify-content: center">
+    <ion-row class="ion-align-items-center" style="height: 100%">
+      <ion-col>
+        <h1>{{item.name}}</h1>
+        <p>Quantity: {{item.quantity}} items</p>
+        <p text-wrap>
+          Date: {{ item.date.getMonth() }}/{{ item.date.getDate() }}/{{
+          item.date.getFullYear() }} {{ item.date.getHours() }}:{{
+          item.date.getMinutes() }}:{{ item.date.getSeconds() }}
+        </p>
+        <p>Total Value: ${{item.total.toFixed(2)}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -6,15 +6,32 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
+      <ion-col size="8">
+        <h2>{{ categoryName }}</h2>
+      </ion-col>
       <ion-col>
-        <div class="screen">
-          <h2>{{ categoryName }}</h2>
-        </div>
+        <ion-button color="danger" [routerLink]="['/manager']"
+          >Manager</ion-button
+        >
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <app-keyboard></app-keyboard>
+        <app-keyboard
+          [total]="totalVal"
+          (digit)="digitChosen($event)"
+          (buy)="buyClicked($event)"
+        ></app-keyboard>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h2>{{ quant }}</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <app-list (chosenItem)="itemChosen($event)"></app-list>
       </ion-col>
     </ion-row>
   </ion-grid>

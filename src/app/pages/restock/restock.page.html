@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Restock Page</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="back-button" defaultHref="/"
+        >Go Back</ion-back-button
+      ></ion-buttons
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scrollY="false">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="8">
+        <h2>{{ categoryName }}</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input
+            [(ngModel)]="input"
+            type="number"
+            placeholder="Enter Restock Quantity"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col
+        ><ion-button color="success" expand="block" (click)="restock()"
+          >Restock</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <ion-item
+      *ngFor="let item of items"
+      button
+      (click)="productSelected(item.id)"
+      detail="false"
+    >
+      <ion-label>{{ item.name }}</ion-label>
+      <ion-label style="width: 4em" slot="end"
+        >${{ item.price.toFixed(2) }}</ion-label
+      >
+      <ion-label style="width: 2em" slot="end">{{ item.quantity }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

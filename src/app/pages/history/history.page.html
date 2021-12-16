@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>History Page</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="back-button" defaultHref="/"
+        >Go Back</ion-back-button
+      ></ion-buttons
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <div *ngFor="let item of items">
+      <ion-item button [routerLink]="['/history-details', item.id]">
+        <ion-label
+          >{{ item.date.getMonth() }}/{{ item.date.getDate() }} {{
+          item.date.getHours() }}:{{ item.date.getMinutes() }}</ion-label
+        >
+        <ion-label>{{ item.name }}</ion-label>
+        <ion-label style="width: 5em" slot="end"
+          >{{ item.quantity }} items</ion-label
+        >
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

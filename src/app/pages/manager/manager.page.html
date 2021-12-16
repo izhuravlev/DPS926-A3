@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Manager</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="back-button" defaultHref="/"
+        >Go Back</ion-back-button
+      ></ion-buttons
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scrollY="false">
+  <ion-grid style="height: 100%; justify-content: center">
+    <ion-row class="ion-align-items-center" style="height: 100%">
+      <ion-col>
+        <ion-button expand="block" [routerLink]="['/history']"
+          >History</ion-button
+        >
+        <ion-button expand="block" [routerLink]="['/restock']"
+          >Restock</ion-button
+        >
+        <ion-button expand="block" [routerLink]="['/new-product']"
+          >Add New Product</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

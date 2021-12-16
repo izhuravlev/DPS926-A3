@@ -1,7 +1,10 @@
 {
   "name": "dps926_A3",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }

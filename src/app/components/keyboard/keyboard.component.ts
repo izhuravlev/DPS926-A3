@@ -1,29 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-keyboard',
   templateUrl: './keyboard.component.html',
   styleUrls: ['./keyboard.component.scss'],
 })
-export class KeyboardComponent implements OnInit {
+export class KeyboardComponent implements OnInit, OnChanges {
   totalVal: string;
-  quant: string;
-  current_val: number;
 
   constructor() {}
 
+  @Input() total: number;
+
+  @Output() digit = new EventEmitter<number>();
+  @Output() buy = new EventEmitter<any>();
+
   ngOnInit() {
-    this.quant = 'Quantity';
-    this.current_val = 0.0;
     this.totalVal = 'Total';
   }
 
   buttonClicked(num: number) {
-    this.current_val = num;
-    if (this.quant === 'Quantity') {
-      this.quant = num.toString();
+    this.digit.emit(num);
+  }
+
+  buyClicked() {
+    this.buy.emit();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.total.currentValue == 0) {
+      this.totalVal = 'Total';
     } else {
-      this.quant += num.toString();
+      this.totalVal = changes.total.currentValue.toString();
     }
   }
 }

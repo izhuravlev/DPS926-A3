@@ -1,0 +1,11 @@
+<ion-list>
+  <div *ngFor="let item of products">
+    <ion-item button (click)="productSelected(item.id)" detail="false">
+      <ion-label>{{ item.name }}</ion-label>
+      <ion-label style="width: 4em" slot="end"
+        >${{ item.price.toFixed(2) }}</ion-label
+      >
+      <ion-label style="width: 2em" slot="end">{{ item.quantity }}</ion-label>
+    </ion-item>
+  </div>
+</ion-list>

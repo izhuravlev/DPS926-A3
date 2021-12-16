@@ -12,6 +12,35 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'manager',
+    loadChildren: () =>
+      import('./pages/manager/manager.module').then((m) => m.ManagerPageModule),
+  },
+  {
+    path: 'restock',
+    loadChildren: () =>
+      import('./pages/restock/restock.module').then((m) => m.RestockPageModule),
+  },
+  {
+    path: 'history',
+    loadChildren: () =>
+      import('./pages/history/history.module').then((m) => m.HistoryPageModule),
+  },
+  {
+    path: 'new-product',
+    loadChildren: () =>
+      import('./pages/new-product/new-product.module').then(
+        (m) => m.NewProductPageModule
+      ),
+  },
+  {
+    path: 'history-details/:id',
+    loadChildren: () =>
+      import('./pages/history-details/history-details.module').then(
+        (m) => m.HistoryDetailsPageModule
+      ),
+  },
 ];
 
 @NgModule({
